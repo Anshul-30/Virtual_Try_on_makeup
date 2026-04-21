@@ -110,8 +110,11 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
-  implementation "com.banuba.sdk:face_tracker:$project.bnb_sdk_version"
+ implementation "com.banuba.sdk:face_tracker:$project.bnb_sdk_version"
     implementation "com.banuba.sdk:background:$project.bnb_sdk_version"
+  implementation "com.banuba.sdk:makeup:$project.bnb_sdk_version"
+implementation "com.banuba.sdk:eyes:$project.bnb_sdk_version"
+implementation "com.banuba.sdk:lips:$project.bnb_sdk_version"
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {
