@@ -40,10 +40,10 @@ import {
   View,
 } from 'react-native';
 import BanubaSdkManager, { EffectPlayerView } from '@banuba/react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { enableScreens } from 'react-native-screens';
+// import { useSafeAreaInsets } from 'react-native-safe-area-context';
+// import { enableScreens } from 'react-native-screens';
 
-enableScreens(false);
+// enableScreens(false);
 
 // EffectPlayerView is typed as Component<{}> — cast to accept style prop
 const EPView = EffectPlayerView as any;
@@ -365,7 +365,7 @@ const swSt = StyleSheet.create({
 // ─────────────────────────────────────────────────────────────────────────────
 // MakeupARScreen — main component
 // ─────────────────────────────────────────────────────────────────────────────
-export default function MakeupARScreen({ navigation }: any) {
+export default function App({ navigation }: any) {
   const [ready,          setReady]          = useState(false);
   const [activeCategory, setActiveCategory] = useState<Category>('lips');
   const [panelOpen,      setPanelOpen]      = useState(true);
@@ -378,7 +378,7 @@ export default function MakeupARScreen({ navigation }: any) {
   // Guards initialize — must only be called once per process
   const initializedRef  = useRef(false);
 
-  const safeAreaInsets = useSafeAreaInsets();
+  const safeAreaInsets = 100;
 
   // ── Apply current makeup state to Banuba ────────────────────────────────────
   // Always attempts reloadConfig — SDK silently drops calls it cannot handle yet.
